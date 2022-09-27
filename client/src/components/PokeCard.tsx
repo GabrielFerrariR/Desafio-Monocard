@@ -7,6 +7,7 @@ import Chip from "@mui/material/Chip";
 import { colours, plainsBg} from "../assets";
 
 
+
 function PokeCard(props: Pokemon) {
   function capitalizeFirstLetter(string:string) {
     return string.charAt(0).toUpperCase() + string.slice(1);
@@ -32,7 +33,7 @@ function PokeCard(props: Pokemon) {
       >
         <img src={props.image} alt="pokemon" width="100px" />
       </Box>
-        <Typography margin={2} variant="h6" position="absolute"  color="black">
+        <Typography margin={2} variant="h6" position="absolute" className="pokemon-name">
           { capitalizeFirstLetter(props.name) }
         </Typography>
         <Stack direction="row">

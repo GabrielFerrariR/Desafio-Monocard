@@ -57,8 +57,11 @@ function MyPokemonCard({name, pokemonId, idMongo}: IProps) {
 
   return (
     <Box margin={2} onClick={ handleOpen }>
+        <div className="nes-container with-title is-rounded is-centered">
+        <p style={ {backgroundColor: '#ecf0f1'}}  className="title">{ name }</p>
+
       <img src={ pokemonInfo.image } alt={ pokemonInfo.name } />
-      <h3>{ name }</h3>
+      </div>
       <Modal
         open={open}
         onClose={handleClose}
@@ -67,7 +70,7 @@ function MyPokemonCard({name, pokemonId, idMongo}: IProps) {
       > 
         <Box sx={boxSx} >
           <img src={ pokemonInfo.image } alt={ pokemonInfo.name } />
-          <h3>{ name }</h3>
+          <h3 className="capture-text">{ name }</h3>
           <h4>{`(${pokemonInfo.name})`}</h4>
           <button className="nes-btn is-success" onClick={ remove }>Libertar</button>
         </Box> 
