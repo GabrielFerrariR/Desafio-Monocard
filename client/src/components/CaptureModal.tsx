@@ -12,15 +12,21 @@ interface ModalProps {
 
 export default function CaptureModal(props: ModalProps) {
   const [open, setOpen] = React.useState(false);
-  const [name, setNome] = React.useState('');
+  const [name, setName] = React.useState('');
   const handleOpen = () => setOpen(true);
   const handleClose = () => setOpen(false);
 
   async function addToList() {
-    await requestCreate('/pokemons', {
-      name,
-      pokemonId: props.pokemonId,
-    });
+    try {
+      await requestCreate('/pokemons', {
+        name,
+        pokemonId: props.pokemonId,
+      });
+    } catch (error) {
+      console.error(error);
+    }
+    setName('');
+    handleClose(); 
   }
 
   return (
@@ -51,7 +57,7 @@ export default function CaptureModal(props: ModalProps) {
               className="nes-input" 
               width="50%"
               value={ name }
-              onChange={({ target }) => setNome(target.value)}
+              onChange={({ target }) => setName(target.value)}
             />
             <button type="button" className="nes-btn is-success" onClick={ addToList }>Adicionar</button>
           </Stack>
