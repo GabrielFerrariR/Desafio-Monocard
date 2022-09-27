@@ -1,4 +1,3 @@
-import React from 'react';
 import { createTheme } from '@mui/material/styles';
 
  const theme = createTheme({
@@ -13,9 +12,6 @@ import { createTheme } from '@mui/material/styles';
       '"Helvetica Neue"',
       'Arial',
       'sans-serif',
-      '"Apple Color Emoji"',
-      '"Segoe UI Emoji"',
-      '"Segoe UI Symbol"',
     ].join(','),
   },
   palette: {
@@ -26,6 +22,9 @@ import { createTheme } from '@mui/material/styles';
       light: '#0066ff',
       main: '#FF0000',
       contrastText: '#0A0800',
+    },
+    warning: {
+      main: '#FFDE00',
     },
     background: {
       default: '#3B4CCA',

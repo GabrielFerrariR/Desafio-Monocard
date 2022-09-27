@@ -2,15 +2,23 @@ import React from "react";
 // import { Link } from "react-router-dom";
 import { AppBar } from "@mui/material";
 import Link from '@mui/material/Link';
-import  Box  from "@mui/material/Box";
+import  Stack  from "@mui/material/Stack";
 
 function Header() {
   return(
-    <AppBar sx={{ height: '7%' }}>
-      <Box sx={{ display: { sm: 'block' }, p: 2 }}>
-        <Link color="white" href="/" underline="none" margin="10">Explorar</Link>
-        <Link href="/mypokemons" color="white" underline="none"> Meus Pokémons</Link>
-      </Box>
+    <AppBar sx={{ height: '10%' }}>
+      <Stack direction='row' justifyContent="center" maxWidth={400} margin="auto">
+        <Link color="white" sx={
+          {
+            ":hover": { color: '#FFDE00'}
+          }
+        }  href="/" underline="hover" margin={2}>Explorar</Link>
+        <Link href="/mypokemons" sx={
+          {
+            ":hover": { color: '#FFDE00'}
+          }
+        } color="white" underline="hover" margin={2}> Meus Pokémons</Link>
+      </Stack>
     </AppBar>
   )
 }
