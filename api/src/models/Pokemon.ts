@@ -1,11 +1,12 @@
-import { Schema, model } from 'mongoose';
+import { Schema, model as modelCreate } from 'mongoose';
+import MongoModel from './MongoModel';
 
-interface Pokemon {
+export interface IPokemon {
   pokemonId: number,
   name: string,
 }
 
-const pokemonSchema = new Schema<Pokemon>({
+const pokemonSchema = new Schema<IPokemon>({
 	pokemonId: {
 		type: Number,
 		required: true,
@@ -16,4 +17,12 @@ const pokemonSchema = new Schema<Pokemon>({
 	},
 }, { versionKey: false, timestamps: true });
 
-export const pokemonModel = model<Pokemon>('Book', pokemonSchema);
+
+
+class Pokemon extends MongoModel<IPokemon> {
+	constructor(model = modelCreate('Pokemon', pokemonSchema)) {
+		super(model);
+	}
+}
+
+export default Pokemon;
