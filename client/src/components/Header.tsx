@@ -7,7 +7,7 @@ import  Stack  from "@mui/material/Stack";
 function Header() {
   return(
     <AppBar sx={{ height: '10%' }}>
-      <Stack direction='row' justifyContent="center" maxWidth={400} margin="auto">
+      <Stack direction='row' justifyContent="center" alignItems="center" maxWidth={400} margin="auto">
         <Link color="white" sx={
           {
             ":hover": { color: '#FFDE00'}

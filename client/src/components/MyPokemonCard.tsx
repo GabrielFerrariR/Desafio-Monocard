@@ -60,7 +60,7 @@ function MyPokemonCard({name, pokemonId, idMongo}: IProps) {
         <div className="nes-container with-title is-rounded is-centered">
         <p style={ {backgroundColor: '#ecf0f1'}}  className="title">{ name }</p>
 
-      <img src={ pokemonInfo.image } alt={ pokemonInfo.name } />
+      <img src={ pokemonInfo.image } width={150} alt={ pokemonInfo.name } />
       </div>
       <Modal
         open={open}
@@ -69,8 +69,8 @@ function MyPokemonCard({name, pokemonId, idMongo}: IProps) {
         aria-describedby="modal-modal-description"
       > 
         <Box sx={boxSx} >
-          <img src={ pokemonInfo.image } alt={ pokemonInfo.name } />
-          <h3 className="capture-text">{ name }</h3>
+          <img src={ pokemonInfo.image } width={150} alt={ pokemonInfo.name } />
+          <h3 className="pokemon-name">{ name }</h3>
           <h4>{`(${pokemonInfo.name})`}</h4>
           <button className="nes-btn is-success" onClick={ remove }>Libertar</button>
         </Box> 
