@@ -5,7 +5,7 @@ dotenv.config();
 
 // optei por criar um banco no Mongodb.com e deixar exposto no código para facilitar as configurações iniciais de quem for avaliar a aplicação, mesmo que isso seja uma má prática. Caso queira usar suas próprias credenciais é só passar uma URI válida em arquivo .env;
 
-const dbURI = process.env.DB_URI || 'mongodb+srv://root:root@desafiomonocard.dokf19w.mongodb.net/?retryWrites=true&w=majority';
+const dbURI = process.env.DB_URI;
 const PORT = 3002;
 
 connect(dbURI)
